@@ -4,177 +4,473 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RH-COCO HARDWARE | Hardware store in San Antonio</title>
-<meta name="description" content="RH-COCO HARDWARE — Built to last. Visit us in San Antonio.">
-<meta name="keywords" content="RH-COCO HARDWARE, Hardware store, San Antonio, Philippines, local business">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg: #FAF8F5;
-  --text: #1C1A18;
-  --accent: #C2847A;
-  --surface: color-mix(in srgb, #FAF8F5 92%, #1C1A18);
-  --border: color-mix(in srgb, #FAF8F5 82%, #1C1A18);
-  --muted: color-mix(in srgb, #1C1A18 65%, #FAF8F5);
-  --font-h: 'Space Grotesk', sans-serif;
-  --font-b: 'DM Sans', sans-serif;
+--orange:#1C1A18;--orange-dark:#c2540d;--steel:#64748B;--bg:#FAF8F5;
+--bg-alt:#EEF2F6;--bg-alt2:#e0e3e5;--text:#C2847A;--text-muted:#64748B;
+--text-light:#94A3B8;--border:rgba(100,116,139,0.14);
+--ease:cubic-bezier(0.16,1,0.3,1);
 }
-/* Philosophy: Brutalist
-   Hard edges, raw borders, zero shadows, zero animations. Maximum contrast.
-   Used by: barbershop-classic, hardware-industrial */
-:root {
-    --phil-radius-sm: 0;
-    --phil-radius-md: 0;
-    --phil-radius-lg: 0;
-    --phil-radius-full: 0;
-    --phil-shadow-card: none;
-    --phil-shadow-card-hover: 4px 4px 0 rgba(0,0,0,0.12);
-    --phil-shadow-hero: none;
-    --phil-border-card: 3px solid var(--text);
-    --phil-border-accent: 3px solid var(--accent);
-    --phil-border-thick: 4px solid var(--text);
-    --phil-anim-reveal: none;
-    --phil-anim-card-hover: transform 0.15s ease;
-    --phil-anim-card-translate-y: translateY(0);
-    --phil-type-scale: 1.25;
-    --phil-spacing-section: 64px;
-    --phil-spacing-card-padding: 2.5rem;
-    --phil-spacing-card-gap: 2rem;
-    --phil-overlay-opacity: 0.9;
-    --phil-btn-radius: 0;
+html{scroll-behavior:smooth}
+body{font-family:'DM+Sans',sans-serif;background:var(--bg);color:var(--text-muted);line-height:1.5;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:1000;height:72px;
+backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);
+background:rgba(248,250,252,0.7);border-bottom:1px solid rgba(100,116,139,0.16);
+transition:all .4s var(--ease)}
+.nav.scrolled{background:rgba(248,250,252,0.95);box-shadow:0 4px 6px -1px rgba(0,0,0,0.05)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:100%;
+display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--orange),#fb8f47);
+border-radius:8px;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
+.logo-text{font-family:'Space+Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--text)}
+.logo-text span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-weight:700;font-size:15px;color:var(--text-muted);transition:color .3s var(--ease)}
+.nav-links a:hover{color:var(--orange-dark)}
+.btn-quote{background:var(--orange);color:#fff;padding:10px 24px;border-radius:9999px;
+font-weight:800;font-size:14px;transition:all .3s var(--ease);cursor:pointer}
+.btn-quote:hover{background:var(--orange-dark);transform:translateY(-2px)}
+
+/* HERO */
+.hero{position:relative;min-height:600px;display:flex;align-items:center;overflow:hidden;
+background:linear-gradient(160deg,#1E293B 0%,#334155 45%,#475569 100%);
+clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
+.hero-pattern{position:absolute;inset:0;opacity:0.16;
+background:repeating-linear-gradient(115deg,#94A3B8 0 3px,transparent 3px 34px);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:680px;padding:120px 24px 80px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
+background:rgba(255,255,255,0.1);backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.2);border-radius:9999px;margin-bottom:28px}
+.hero-badge .dot{width:7px;height:7px;background:var(--orange);border-radius:50%}
+.hero-badge span{color:#E2E8F0;font-weight:800;font-size:12.5px;letter-spacing:1.2px}
+.hero h1{font-family:'Space+Grotesk',sans-serif;font-weight:700;
+font-size:clamp(40px,5.6vw,72px);line-height:1.02;color:#fff;margin:0 0 22px}
+.hero h1 span{color:var(--orange)}
+.hero p{font-size:18px;line-height:1.6;color:#CBD5E1;max-width:520px;margin:0 0 36px;font-weight:600}
+.hero-btns{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:52px}
+.btn-primary{background:var(--orange);color:#fff;padding:16px 30px;border-radius:9999px;
+font-weight:800;font-size:16px;transition:all .3s var(--ease);cursor:pointer}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 14px 28px rgba(249,115,22,0.35)}
+.btn-secondary{color:#fff;padding:16px 30px;border-radius:9999px;
+background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.35);font-weight:800;font-size:16px;transition:all .3s var(--ease);cursor:pointer}
+.btn-secondary:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:0;background:rgba(255,255,255,0.07);
+backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.16);
+border-radius:16px;width:fit-content}
+.hero-stat{padding:18px 28px;border-right:1px solid rgba(255,255,255,0.16)}
+.hero-stat:last-child{border-right:none}
+.hero-stat .num{font-family:'Space+Grotesk',sans-serif;font-weight:600;font-size:24px;color:#fff}
+.hero-stat .label{font-size:12.5px;color:var(--text-light);font-weight:700;letter-spacing:0.4px}
+
+/* PRODUCTS */
+.products{padding:96px 24px 120px;max-width:1440px;margin:0 auto}
+.products-header{max-width:640px;margin-bottom:56px}
+.eyebrow{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:1.4px}
+.products-header h2{font-family:'Space+Grotesk',sans-serif;font-weight:600;
+font-size:clamp(30px,3.6vw,44px);color:var(--text);margin:10px 0 14px}
+.products-header p{font-size:16.5px;line-height:1.6;color:var(--text-muted);font-weight:600}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.product-card{position:relative;background:#fff;border:1px solid var(--border);
+border-radius:24px;overflow:hidden;
+transition:transform .4s var(--ease),box-shadow .4s var(--ease);cursor:pointer}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 24px 40px rgba(30,41,59,0.14)}
+.product-img{height:170px;position:relative;overflow:hidden}
+.product-img-placeholder{position:absolute;inset:0;opacity:0.5;
+background:repeating-linear-gradient(120deg,rgba(255,255,255,0.35) 0 2px,transparent 2px 16px)}
+.product-info{padding:20px 22px 26px}
+.product-info h3{font-family:'Space+Grotesk',sans-serif;font-weight:600;font-size:19px;color:var(--text);margin:0 0 6px}
+.product-info p{font-size:14px;color:var(--text-muted);font-weight:700;margin:0}
+
+/* ABOUT */
+.about{position:relative;background:var(--bg-alt);
+clip-path:polygon(0 4%,100% 0,100% 100%,0 96%);padding:110px 24px 130px}
+.about-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-bg{position:absolute;top:-18px;left:-18px;width:100%;height:100%;
+background:linear-gradient(135deg,var(--orange),#fb8f47);border-radius:24px;z-index:0}
+.about-img-frame{position:relative;z-index:1;height:420px;border-radius:24px;overflow:hidden}
+.about-stats{display:flex;gap:36px;margin-bottom:28px}
+.about-stat .num{font-family:'Space+Grotesk',sans-serif;font-weight:600;font-size:26px;color:var(--orange)}
+.about-stat .label{font-size:12.5px;color:var(--text-muted);font-weight:700}
+.about-text h2{font-family:'Space+Grotesk',sans-serif;font-weight:600;
+font-size:clamp(28px,3.4vw,40px);color:var(--text);margin:10px 0 18px}
+.about-text p{font-size:16px;line-height:1.7;color:#475569;font-weight:600;margin:0 0 20px}
+
+/* TRUST */
+.trust{position:relative;background:linear-gradient(160deg,#1E293B,#334155);
+clip-path:polygon(0 0,100% 6%,100% 100%,0 94%);padding:120px 24px 140px;overflow:hidden}
+.trust-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto}
+.trust-badges{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:72px}
+.trust-badge{display:flex;align-items:center;gap:10px;padding:14px 22px;
+background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.18);border-radius:12px}
+.trust-badge .dot{width:9px;height:9px;background:var(--orange);transform:rotate(45deg)}
+.trust-badge span{color:#F1F5F9;font-weight:800;font-size:14px}
+.trust h2{font-family:'Space+Grotesk',sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,44px);
+color:#fff;text-align:center;margin-bottom:64px}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.testimonial-card{padding:30px 26px;background:rgba(255,255,255,0.09);
+backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.16);border-radius:20px}
+.stars{display:flex;gap:4px;margin-bottom:14px}
+.stars span{width:12px;height:12px;background:var(--orange);
+clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.testimonial-card p.quote{font-size:15px;line-height:1.6;color:#E2E8F0;font-weight:600;margin:0 0 18px}
+.testimonial-card .name{font-family:'Space+Grotesk',sans-serif;font-weight:600;font-size:15px;color:#fff}
+.testimonial-card .role{font-size:13px;color:var(--text-light);font-weight:700}
+
+/* CTA / CONTACT */
+.cta{position:relative;background:var(--bg);padding:110px 24px 120px;overflow:hidden}
+.cta-bg{position:absolute;top:0;right:0;width:55%;height:100%;
+background:linear-gradient(160deg,var(--orange),#fb8f47);
+clip-path:polygon(30% 0,100% 0,100% 100%,0 100%)}
+.cta-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;
+display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.cta-info h2{font-family:'Space+Grotesk',sans-serif;font-weight:600;
+font-size:clamp(30px,3.8vw,46px);color:var(--text);margin:10px 0 18px;max-width:480px}
+.cta-info p{font-size:16.5px;line-height:1.7;color:#334155;font-weight:700;max-width:440px;margin:0 0 32px}
+.cta-contact{display:flex;flex-direction:column;gap:14px}
+.cta-contact-item{display:flex;align-items:center;gap:12px}
+.cta-contact-icon{width:34px;height:34px;background:rgba(255,255,255,0.5);
+backdrop-filter:blur(10px);border-radius:8px;flex:none}
+.cta-contact-item span{font-weight:800;color:var(--text);font-size:15.5px}
+.cta-form{background:rgba(255,255,255,0.65);backdrop-filter:blur(22px);
+-webkit-backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,0.6);
+border-radius:24px;padding:34px;box-shadow:0 24px 48px rgba(30,41,59,0.14)}
+.form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-field label{font-weight:800;font-size:13px;color:#334155}
+.form-field input,.form-field textarea{width:100%;padding:12px 14px;
+border:1px solid rgba(100,116,139,0.3);background:rgba(255,255,255,0.7);
+border-radius:12px;font-size:15px;font-family:'DM+Sans',sans-serif;color:var(--text)}
+.form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--orange);
+box-shadow:0 0 0 2px rgba(249,115,22,0.15)}
+.btn-submit{width:100%;background:var(--text);color:#fff;border:none;
+border-radius:12px;font-weight:800;font-size:15.5px;padding:15px;cursor:pointer;
+transition:all .3s var(--ease);font-family:'DM+Sans',sans-serif}
+.btn-submit:hover{background:#0f172a;transform:translateY(-1px)}
+.form-success{text-align:center;padding:40px 10px}
+.form-success h3{font-family:'Space+Grotesk',sans-serif;font-size:22px;color:var(--text);margin:0 0 8px}
+.form-success p{color:#475569;font-weight:700;font-size:14.5px;margin:0}
+
+/* FOOTER */
+.footer{background:var(--text);clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);padding:96px 24px 36px;color:#CBD5E1}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:56px;border-bottom:1px solid rgba(148,163,184,0.18)}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand .logo-mark{width:32px;height:32px}
+.footer-brand span{font-family:'Space+Grotesk',sans-serif;font-weight:700;font-size:19px;color:#fff}
+.footer-col p{font-size:14.5px;line-height:1.6;color:var(--text-light);font-weight:600;max-width:260px;margin:0 0 20px}
+.footer-col h4{font-weight:800;font-size:13px;letter-spacing:1px;color:#fff;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col ul li a{color:var(--text-light);font-weight:700;font-size:14.5px;transition:color .3s var(--ease)}
+.footer-col ul li a:hover{color:var(--orange)}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:38px;height:38px;background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.16);border-radius:8px;
+display:flex;align-items:center;justify-content:center;transition:all .3s var(--ease)}
+.footer-social a:hover{background:var(--orange);border-color:var(--orange)}
+.footer-social a span{width:14px;height:14px;background:#fff}
+.footer-bottom{max-width:1280px;margin:0 auto;padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-bottom span{font-size:13px;color:var(--text-light);font-weight:700}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.nav-links{display:none}
+.about-inner{grid-template-columns:1fr}
+.cta-inner{grid-template-columns:1fr}
+.footer-inner{grid-template-columns:1fr}
+.hero-content{padding:100px 24px 60px}
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font-b);line-height:1.6;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4,.fh{font-family:var(--font-h);font-weight:600;line-height:1.15}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
-.container{width:100%;max-width:1180px;margin:0 auto;padding:0 5%}
-.section{padding:var(--phil-spacing-section) 0}
-.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600;color:var(--accent)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:var(--bg);padding:1rem 2rem;font-weight:600;letter-spacing:.02em;border-radius:var(--phil-btn-radius);transition:transform .25s ease,opacity .25s ease;cursor:pointer;border:none;font-family:var(--font-b)}
-.btn:hover{transform:translateY(-3px);opacity:.92}
-.btn--ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-/* NAV */
-#nav{position:fixed;inset:0 0 auto 0;padding:1.25rem 0;z-index:100;transition:all .35s ease;color:#fff}
-#nav.scrolled{background:var(--bg);color:var(--text);box-shadow:0 4px 24px rgba(0,0,0,.06);padding:.85rem 0}
-.nav__in{display:flex;justify-content:space-between;align-items:center}
-.nav__brand{font-family:var(--font-h);font-size:1.4rem;font-weight:700;letter-spacing:-.01em}
-.nav__cta{font-weight:600;font-size:.9rem;border:1px solid currentColor;padding:.5rem 1rem;border-radius:2px}
-@media(max-width:720px){.section{padding:64px 0}.nav__cta{display:none}}
+/* FOCUS */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+outline:2px solid var(--orange);outline-offset:2px}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+.reveal{opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
-<nav id="nav"><div class="container nav__in">
-  <a href="#" class="nav__brand">RH-COCO HARDWARE</a>
-  <a href="tel:639055347615" class="nav__cta">639055347615</a>
-</div></nav>
-<style>
-.hx-sp{display:grid;grid-template-columns:1.05fr .95fr;min-height:90vh;align-items:center}
-.hx-sp__text{padding:8rem 6% 4rem}
-.hx-sp__title{font-size:clamp(2.6rem,5vw,4.4rem);margin:.6rem 0 1rem}
-.hx-sp__title span{color:var(--accent);display:block}
-.hx-sp__sub{font-size:1.15rem;color:var(--muted);max-width:34ch;margin-bottom:2rem}
-.hx-sp__img{height:100%;min-height:90vh;background-size:cover;background-position:center}
-@media(max-width:820px){.hx-sp{grid-template-columns:1fr}.hx-sp__img{min-height:44vh}.hx-sp__text{padding:7rem 6% 3rem}}
-</style>
-<header class="hx-sp">
-  <div class="hx-sp__text reveal">
-    <p class="eyebrow">Serving San Antonio ★ 5.0</p>
-    <h1 class="hx-sp__title">RH-COCO HARDWARE<span>Hardware store</span></h1>
-    <p class="hx-sp__sub">Built to last.</p>
-    <a href="https://wa.me/639055347615" class="btn">Get in Touch</a>
-  </div>
-  <div class="hx-sp__img" style="background-image:url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1920&amp;h=1080&amp;fit=crop')"></div>
-</header>
-<style>
-.sx-svc{background:var(--surface)}
-.sx-svc__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--phil-spacing-card-gap);margin-top:2.5rem}
-.sx-svc__card{background:var(--bg);border:var(--phil-border-card);border-radius:var(--phil-radius-md);padding:var(--phil-spacing-card-padding);transition:var(--phil-anim-card-hover)}
-.sx-svc__card:hover{transform:var(--phil-anim-card-translate-y);box-shadow:var(--phil-shadow-card-hover)}
-.sx-svc__bar{width:34px;height:3px;background:var(--accent);margin-bottom:1rem}
-.sx-svc__card h3{font-size:1.2rem;margin-bottom:.4rem}
-.sx-svc__card p{color:var(--muted);font-size:.95rem}
-</style>
-<section class="section sx-svc" id="services"><div class="container">
-  <p class="eyebrow reveal">What we do</p>
-  <h2 class="reveal" style="font-size:clamp(1.9rem,4vw,2.8rem);margin-top:.4rem">Our Services</h2>
-  <div class="sx-svc__grid">
-    <div class="sx-svc__card reveal"><div class="sx-svc__bar"></div><h3>Tool Rental</h3><p>Daily and weekly rates.</p></div>
-    <div class="sx-svc__card reveal"><div class="sx-svc__bar"></div><h3>Custom Cutting</h3><p>Wood and metal cut to size.</p></div>
-    <div class="sx-svc__card reveal"><div class="sx-svc__bar"></div><h3>Bulk Orders</h3><p>Contractor pricing available.</p></div>
-  </div>
-</div></section>
-<style>
-.sx-trust{background:var(--text);color:var(--bg)}
-.sx-trust__in{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--phil-spacing-card-gap);padding:2.6rem 0}
-.sx-trust__item b{display:block;font-family:var(--font-h);font-size:1.05rem}
-.sx-trust__item span{opacity:.75;font-size:.9rem}
-@media(max-width:720px){.sx-trust__in{grid-template-columns:1fr;gap:1.2rem}}
-</style>
-<section class="sx-trust"><div class="container sx-trust__in">
-  <div class="sx-trust__item reveal"><b>5.0★</b><span>4+ Google reviews</span></div>
-  <div class="sx-trust__item reveal"><b>Serving San Antonio</b><span>Since 2026</span></div>
-  <div class="sx-trust__item reveal"><b>Walk-ins Welcome</b><span>No appointment needed</span></div>
-</div></section>
-<style>
-.sx-loc__grid{display:grid;grid-template-columns:1fr 1fr;background:var(--surface)}
-.sx-loc__content{padding:4rem 8%;display:flex;flex-direction:column;justify-content:center}
-.sx-loc__content h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1.2rem}
-.sx-loc__row{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid var(--border);font-size:.95rem}
-.sx-loc__addr{margin-top:1.2rem;color:var(--muted)}
-.sx-loc__map{min-height:420px}
-.sx-loc__map iframe{width:100%;height:100%;border:0}
-@media(max-width:820px){.sx-loc__grid{grid-template-columns:1fr}.sx-loc__map{min-height:320px}}
-</style>
-<section id="visit"><div class="sx-loc__grid">
-  <div class="sx-loc__content reveal">
-    <p class="eyebrow">Visit us</p><h2 class="fh">RH-COCO HARDWARE</h2>
-    <div class="sx-loc__row"><span>8:00 AM – 6:00 PM</span></div>
-    <div class="sx-loc__row"><span>8:00 AM – 6:00 PM</span></div>
-    <p class="sx-loc__addr">8303 Dr Arcadio Santos Ave</p>
-    <p class="sx-loc__addr"><a href="tel:639055347615">639055347615</a></p>
-  </div>
-  <div class="sx-loc__map reveal"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.8!2d121.04!3d14.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2sRH-COCO+HARDWARE!5e0!3m2!1sen!2sph" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-</div></section>
-<style>
-.sx-cta{background:var(--text);color:var(--bg);text-align:center;padding:5rem 0}
-.sx-cta h2{font-size:clamp(2rem,4.5vw,3.2rem);margin:.5rem 0 .4rem}
-.sx-cta__phone{font-family:var(--font-h);font-size:clamp(1.6rem,4vw,2.4rem);color:var(--accent);display:inline-block;margin-bottom:.4rem}
-.sx-cta__hours{opacity:.7;margin-bottom:1.6rem}
-</style>
-<section class="sx-cta"><div class="container reveal">
-  <p class="eyebrow" style="color:var(--accent)">Get in touch</p>
-  <a class="sx-cta__phone" href="tel:639055347615">639055347615</a>
-  <p class="sx-cta__hours">8:00 AM – 6:00 PM</p>
-  <a class="btn" href="tel:639055347615">Get in Touch</a>
-</div></section>
-<style>
-.ft{background:var(--text);color:var(--bg);padding:3.5rem 0 2rem;text-align:center;border-top:1px solid color-mix(in srgb,var(--bg) 15%,transparent)}
-.ft__soc{display:flex;justify-content:center;gap:1.6rem;margin-bottom:1.4rem}
-.ft__soc a{font-family:var(--font-h);font-style:italic;transition:color .25s ease}
-.ft__soc a:hover{color:var(--accent)}
-.ft__copy{opacity:.6;font-size:.82rem}
-</style>
-<footer class="ft"><div class="container">
-  <div class="ft__soc">
-    <a href="" target="_blank" rel="noopener">Facebook</a>
-    <a href="" target="_blank" rel="noopener">Instagram</a>
-  </div>
-  <p class="ft__copy">&copy; <span id="yr"></span> RH-COCO HARDWARE. All rights reserved.</p>
-</div></footer>
+<!--NAV-->
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a href="#" class="logo">
+<div class="logo-mark"></div>
+<span class="logo-text">RH-COCO HARDWARE</span>
+</a>
+<div class="nav-links">
+<a href="#stock">Shop</a>
+<a href="#story">Our Story</a>
+<a href="#trust">Reviews</a>
+<a href="#contact">Contact</a>
+</div>
+<a href="#contact" class="btn-quote">Get a Quote</a>
+</div>
+</nav>
+
+<!--HERO-->
+<section class="hero" id="hero">
+<div class="hero-pattern"></div>
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge">
+<span class="dot"></span>
+<span>Serving San Antonio ★ 5.0</span>
+</div>
+<h1>RH-COCO HARDWARE</h1>
+<p>Hardware store</p>
+<div class="hero-btns">
+<a href="#stock" class="btn-primary">Get in Touch</a>
+<a href="#contact" class="btn-secondary">Contact Us</a>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num">25k+</div><div class="label">SKUS IN STOCK</div></div>
+<div class="hero-stat"><div class="num">3</div><div class="label">LOCAL LOCATIONS</div></div>
+<div class="hero-stat"><div class="num">37</div><div class="label">YEARS SERVING YOU</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!--PRODUCTS-->
+<section class="products" id="stock">
+<div class="products-header reveal">
+<span class="eyebrow">OUR AISLES</span>
+<h2>Our Services</h2>
+<p>From framing nails to finish paint. Six aisles of stock, curated by people who've actually built things.</p>
+</div>
+<div class="products-grid">
+<div class="product-card reveal">
+<div class="product-img" style="background:linear-gradient(150deg,#64748B,#475569)">
+<div class="product-img-placeholder"></div>
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&amp;h=600&amp;fit=crop" alt="Power tools" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+</div>
+<div class="product-info"><h3>Tool Rental</h3><p>Daily and weekly rates.</p></div>
+</div>
+<div class="product-card reveal">
+<div class="product-img" style="background:linear-gradient(150deg,#F97316,#c2540d)">
+<div class="product-img-placeholder"></div>
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&amp;h=600&amp;fit=crop" alt="Hand tools and fasteners" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+</div>
+<div class="product-info"><h3>Custom Cutting</h3><p>Wood and metal cut to size.</p></div>
+</div>
+<div class="product-card reveal">
+<div class="product-img" style="background:linear-gradient(150deg,#94A3B8,#64748B)">
+<div class="product-img-placeholder"></div>
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&amp;h=800&amp;fit=crop" alt="Paint and finishes" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+</div>
+<div class="product-info"><h3>Bulk Orders</h3><p>Contractor pricing available.</p></div>
+</div>
+<div class="product-card reveal">
+<div class="product-img" style="background:linear-gradient(150deg,#475569,#1E293B)">
+<div class="product-img-placeholder"></div>
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&amp;h=800&amp;fit=crop" alt="Lumber and building" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+</div>
+<div class="product-info"><h3>Lumber &amp; Building</h3><p>900+ items</p></div>
+</div>
+<div class="product-card reveal">
+<div class="product-img" style="background:linear-gradient(150deg,#fb8f47,#F97316)">
+<div class="product-img-placeholder"></div>
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&amp;h=600&amp;fit=crop" alt="Outdoor and garden" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+</div>
+<div class="product-info"><h3>Outdoor &amp; Garden</h3><p>2,000+ items</p></div>
+</div>
+<div class="product-card reveal">
+<div class="product-img" style="background:linear-gradient(150deg,#64748B,#334155)">
+<div class="product-img-placeholder"></div>
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&amp;h=600&amp;fit=crop" alt="Plumbing and electrical" style="width:100%;height:100%;object-fit:cover;opacity:0.7">
+</div>
+<div class="product-info"><h3>Plumbing &amp; Electrical</h3><p>3,600+ items</p></div>
+</div>
+</div>
+</section>
+<!--ABOUT-->
+<section class="about" id="story">
+<div class="about-inner">
+<div class="reveal">
+<div class="about-img-wrap">
+<div class="about-img-bg"></div>
+<div class="about-img-frame">
+<img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&amp;h=600&amp;fit=crop" alt="Store team out front" style="width:100%;height:100%;object-fit:cover">
+</div>
+</div>
+</div>
+<div class="reveal">
+<span class="eyebrow">OUR STORY</span>
+<h2>About RH-COCO HARDWARE</h2>
+<p>RH-COCO HARDWARE has been San Antonio's go-to hardware stop — the parts and tools that get the job done.</p>
+<div class="about-stats">
+<div class="about-stat"><div class="num">1987</div><div class="label">FOUNDED</div></div>
+<div class="about-stat"><div class="num">3</div><div class="label">LOCATIONS</div></div>
+<div class="about-stat"><div class="num">40+</div><div class="label">TEAM MEMBERS</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!--TRUST-->
+<section class="trust" id="trust">
+<div class="trust-inner">
+<div class="trust-badges reveal">
+<div class="trust-badge"><span class="dot"></span><span>Locally Owned &amp; Operated</span></div>
+<div class="trust-badge"><span class="dot"></span><span>Licensed &amp; Insured</span></div>
+<div class="trust-badge"><span class="dot"></span><span>Price-Match Guarantee</span></div>
+<div class="trust-badge"><span class="dot"></span><span>4.9 star Google Rating</span></div>
+</div>
+<h2 class="reveal">Don't just take our word for it</h2>
+<div class="testimonial-grid">
+<div class="testimonial-card reveal">
+<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+<p class="quote">"Found a part here three other stores didn't even carry. Staff walked me right to it."</p>
+<div class="name">Dana K.</div>
+<div class="role">Millbrook, OH</div>
+</div>
+<div class="testimonial-card reveal">
+<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+<p class="quote">"Rented a tile saw for the weekend and they showed me how to load the blade. Saved my project."</p>
+<div class="name">Marcus T.</div>
+<div class="role">Contractor</div>
+</div>
+<div class="testimonial-card reveal">
+<div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+<p class="quote">"Same family that's been here 20 years still remembers my name. That's rare these days."</p>
+<div class="name">Priya S.</div>
+<div class="role">Local Homeowner</div>
+</div>
+</div>
+</div>
+</section>
+
+<!--CTA / CONTACT-->
+<section class="cta" id="contact">
+<div class="cta-bg"></div>
+<div class="cta-inner">
+<div class="cta-info reveal">
+<span class="eyebrow" style="color:var(--text)">GET IN TOUCH</span>
+<h2>Ready to Start Your Project?</h2>
+<p>Order online, book a repair, or swing by. Our floor team will have what you need ready at the counter.</p>
+<div class="cta-contact">
+<div class="cta-contact-item"><span class="cta-contact-icon"></span><span>639055347615</span></div>
+<div class="cta-contact-item"><span class="cta-contact-icon"></span><span>Open today, 7am to 8pm</span></div>
+</div>
+</div>
+<div class="cta-form reveal" id="formWrap">
+<form id="contactForm">
+<div class="form-field">
+<label>Name</label>
+<input type="text" required placeholder="Jamie Rivera">
+</div>
+<div class="form-field">
+<label>Email</label>
+<input type="email" required placeholder="jamie@email.com">
+</div>
+<div class="form-field">
+<label>What do you need?</label>
+<textarea rows="3" placeholder="Tile saw rental, deck lumber quote, faucet repair..."></textarea>
+</div>
+<button type="submit" class="btn-submit">Send It</button>
+</form>
+</div>
+</div>
+</section>
+
+<!--FOOTER-->
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-col">
+<div class="footer-brand">
+<div class="logo-mark"></div>
+<span>RH-COCO HARDWARE</span>
+</div>
+<p>Neighborhood hardware, three generations running. Tools, lumber, and honest advice.</p>
+<div class="footer-social">
+<a href="#"><span style="clip-path:polygon(0 0,100% 0,100% 100%,0 100%)"></span></a>
+<a href="#"><span style="clip-path:circle(50% at 50% 50%)"></span></a>
+<a href="#"><span style="clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)"></span></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>SHOP</h4>
+<ul>
+<li><a href="#stock">Tool Rental</a></li>
+<li><a href="#stock">Bulk Orders</a></li>
+<li><a href="#stock">Lumber</a></li>
+<li><a href="#stock">Outdoor &amp; Garden</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>COMPANY</h4>
+<ul>
+<li><a href="#story">Our Story</a></li>
+<li><a href="#trust">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#">Careers</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>VISIT US</h4>
+<p style="max-width:220px">8303 Dr Arcadio Santos Ave</p>
+<p style="max-width:220px">8:00 AM – 6:00 PM<br>8:00 AM – 6:00 PM</p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>(c) 2026 RH-COCO HARDWARE. All rights reserved.</span>
+</div>
+</footer>
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-  setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){el.classList.add('visible');});},1600);
-  var nav=document.getElementById('nav');
-  if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50);});}
-  var yr=document.getElementById('yr');if(yr)yr.textContent=new Date().getFullYear();
+(function(){
+var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* SCROLL REVEAL */
+if(!reduced){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e,i){
+if(e.isIntersecting){
+setTimeout(function(){e.target.classList.add('visible')},i*80);
+io.unobserve(e.target);
+}
 });
+},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+}else{
+document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')});
+}
+
+/* NAV SCROLL */
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){
+nav.classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
+
+/* FORM SUBMIT */
+var form=document.getElementById('contactForm');
+if(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+var wrap=document.getElementById('formWrap');
+wrap.innerHTML='<div class="form-success">'+
+'<h3>Got it, thanks!</h3>'+
+'<p>We\'ll get back to you within one business day.</p>'+
+'</div>';
+});
+}
+})();
 </script>
-</body></html>
+</body>
+</html>
